@@ -6,10 +6,11 @@ In this phase of the project, we convert out code from phase 1 (standard Java) t
 [PetClinic Reference Application](http://petclinic.cognizantacademy.com)
 
 #### What You Are Given
-You are given the following:
+
 * Code for the `OwnerController`
 * Code for the `OwnerService`
 * Code for the `OwnerRepository`
+* Models for `Owner` and `Pet`
 * A `FakeDatabase`
 * Supporting interfaces for the `FakeDatabase` (`Modifiable` and `CrudRepository`)
 
