@@ -7,8 +7,8 @@ In this phase of the project, we convert our code from phase 1 (standard Java) t
 
 #### What You Are Given
 
-* Code for the controllers - `OwnerController`,`PetController`, `VisitController`, `VetController`
-* Code for the services - `OwnerService`, `PetService`, `VisitService`, `VetService`
+* Code for the controllers - `BasicController`, `OwnerController`,`PetController`, `VisitController`, `VetController`
+* Code for the services - `BasicService`, `OwnerService`, `PetService`, `VisitService`, `VetService`
 * Code for the repositories - `OwnerRepository`, `PetRepository`, `VisitRepository`, `VetRepository`
 * Code for the models - `Owner`, `Pet`, `PetType`, `Visit`, `Vet` and `Speciality`
 * A database class - `FakeDatabase`
