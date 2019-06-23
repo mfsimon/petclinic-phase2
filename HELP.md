@@ -5,6 +5,7 @@ For further reference, please consider the following sections:
 
 * [Official Apache Maven Documentation](https://maven.apache.org/guides/index.html)
 * [Official GitHub Documentation](https://guides.github.com/)
+* [Official Spring 5 Documentation](https://docs.spring.io/spring/docs/5.0.0.M5/spring-framework-reference/html/overview.html)
 
 ### Guides
 The following guides illustrate how to use some features and patterns applied in this phase:
@@ -20,7 +21,6 @@ The following guides illustrate how to use some features and patterns applied in
 
 ###### Phase 2 Links
 * [What Are Build Tools?](https://stackoverflow.com/questions/7249871/what-is-a-build-tool/19516639)
-* [Official Spring 5 Documentation](https://docs.spring.io/spring/docs/5.0.0.M5/spring-framework-reference/html/overview.html)
 * [IoC and DI in Spring](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
 * [Spring Boot Features](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.htmlhtml)
 * [Lambdas and Closures](https://stackoverflow.com/questions/220658/what-is-the-difference-between-a-closure-and-a-lambda)
