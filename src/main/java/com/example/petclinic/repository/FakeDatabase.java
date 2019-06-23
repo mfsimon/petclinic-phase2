@@ -26,12 +26,17 @@ public class FakeDatabase {
     // Uses 'singleton' pattern to ensure we're only ever dealing with one instance of our database
     private FakeDatabase() {
 
+        initializeTables();
+
+    }
+
+    private void initializeTables() {
+
         // initialize 'database'
         for (TableName tableName : TableName.values()) {
             List<?> table = new ArrayList<>();
             map.put(tableName.name(), table);
         }
-
     }
 
     // implemented as part of singleton pattern
@@ -134,6 +139,12 @@ public class FakeDatabase {
 
         List<T> result = (List<T>) this.map.get(tableName.toUpperCase());
         return result;
+    }
+
+    public void dropAll() {
+
+        this.map.clear();
+        initializeTables();
     }
 
     /**
