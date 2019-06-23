@@ -2,48 +2,46 @@ package com.example.petclinic.service;
 
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.repository.OwnerRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class OwnerService {
+public class OwnerService implements BasicService<Owner> {
 
     private OwnerRepository ownerRepository;
 
     public OwnerService(OwnerRepository ownerRepository) {
+
         this.ownerRepository = ownerRepository;
     }
 
+    @Override
+    public Owner add(Owner owner) {
 
-    public Owner saveOwner(Owner owner) {
-
-        Owner result = this.ownerRepository.create(owner);
-        return result;
+        return this.ownerRepository.create(owner);
     }
 
-    public Owner getOwner(Owner owner) {
+    @Override
+    public Owner get(int id) {
 
-        Owner result = this.ownerRepository.read(owner);
-        return result;
+        return this.ownerRepository.read(new Owner(id));
     }
 
-    public Owner modifyOwner(Owner owner) {
+    @Override
+    public Owner modify(Owner owner) {
 
-        Owner result = this.ownerRepository.update(owner);
-        return result;
+        return this.ownerRepository.update(owner);
     }
 
-    public boolean deleteOwner(Owner owner) {
+    @Override
+    public boolean delete(Owner owner) {
 
-        boolean result = this.ownerRepository.delete(owner);
-        return result;
+        return this.ownerRepository.delete(owner);
     }
 
+    @Override
     public List<Owner> getAll() {
 
-        List<Owner> result = ownerRepository.getAll();
-        return result;
+        return ownerRepository.getAll();
     }
 
 

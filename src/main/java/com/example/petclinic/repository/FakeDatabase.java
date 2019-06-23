@@ -16,7 +16,7 @@ public class FakeDatabase {
 
     // To add a table, add a value to this enum.  An empty table will be added automatically with the name used here.
     private enum TableName {
-        OWNER, PET
+        OWNER, PET, VISIT, VET
     }
 
     private static FakeDatabase INSTANCE = null;
@@ -90,7 +90,7 @@ public class FakeDatabase {
      * @return
      * @throws InvalidObjectException
      */
-    public <T extends Modifiable> T modify(T t) throws InvalidObjectException {
+    public <T extends Modifiable> T modify(T t) {
 
         // using reflection to get table name
         String tableName = t.getClass().getSimpleName().toUpperCase();

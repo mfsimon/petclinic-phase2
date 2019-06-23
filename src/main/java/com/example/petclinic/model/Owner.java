@@ -15,11 +15,12 @@ public class Owner implements Modifiable {
     private String city;
     private String phoneNumber;
 
+    // associations
     private List<Pet> pets;
 
-    // This constructor uses a pattern called 'constructor chaining'
+
     public Owner(int id) {
-        this(id, null, null, null, null);
+        this.id = id;
     }
 
     public Owner(int id, String name, String address, String city, String phoneNumber) {
@@ -80,7 +81,7 @@ public class Owner implements Modifiable {
         this.pets.add(pet);
     }
 
-    public List<Pet> getPets() {
+    public List<Pet> getAllPets() {
         return this.pets;
     }
 
@@ -102,21 +103,14 @@ public class Owner implements Modifiable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Owner {");
+        final StringBuilder sb = new StringBuilder("Owner{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", address='").append(address).append('\'');
         sb.append(", city='").append(city).append('\'');
         sb.append(", phoneNumber='").append(phoneNumber).append('\'');
-        if (pets.size() > 0) {
-            pets.forEach(pet ->
-                sb.append("\n\t\t" + pet)
-            );
-            sb.append("\n\t" + '}');
-        } else {
-            sb.append(", pets=").append(pets);
-            sb.append('}');
-        }
+        sb.append(", pets=").append(pets);
+        sb.append('}');
         return sb.toString();
     }
 }

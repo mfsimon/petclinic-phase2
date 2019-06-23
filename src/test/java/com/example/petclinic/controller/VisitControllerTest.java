@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class OwnerControllerTest {
+public class VisitControllerTest {
 
     @Test
     public void add() {
