@@ -1,34 +1,28 @@
 # PetClinic Phase 2
 
 #### Overview
-In this phase of the project, we convert out code from phase 1 (standard Java) to use Spring and Spring Boot.
+In this phase of the project, we convert our code from phase 1 (standard Java) to use Spring and Spring Boot.
 
 [PetClinic Reference Application](http://petclinic.cognizantacademy.com)
 
 #### What You Are Given
 
-* Code for the `OwnerController`
-* Code for the `OwnerService`
-* Code for the `OwnerRepository`
-* Models for `Owner`, `Pet` and `PetType`
-* A `FakeDatabase`
+* Code for the controllers - `OwnerController`,`PetController`, `VisitController`, `VetController`
+* Code for the services - `OwnerService`, `PetService`, `VisitService`, `VetService`
+* Code for the repositories - `OwnerRepository`, `PetRepository`, `VisitRepository`, `VetRepository`
+* Code for the models - `Owner`, `Pet`, `PetType`, `Visit`, `Vet` and `Speciality`
+* A database class - `FakeDatabase`
 * Supporting interfaces for the `FakeDatabase` (`Modifiable` and `CrudRepository`)
+* A driver class - `PetClinicDriver`
 
 #### What You Need To Complete
-* Add the proper annotations to the `PetClinicDriver` and each of the controllers, services and repository classes.
-* If you don't have them complete, continue to implement controllers, services and repositories for each of the models (`Pet`, `Visit`, `Vet`).
-
-###### List of Patterns Used
-
-* MVC
-* 3-Tier application
-* Polymorphism (inheritance)
-* Designing to interfaces
+* Add the proper annotations to each of the controllers, services and repository classes.
+* Add the proper annotation to the driver to turn it into a Spring Boot application.
 
 ###### List of Spring Annotations Used
 * @Controller
 * @Service
-* @Component or @Repository
+* @Repository
 * @SpringBootApplication
 
 ###### Bonus Activity 1 (easy)
