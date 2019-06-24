@@ -33,10 +33,14 @@ In this phase of the project, we convert our code from phase 1 (standard Java) t
 
 ###### Bonus Activity 2 (hard)
 * Implement a custom exit code in your Spring Boot application.
-* This is done by adding certain Spring Beans to your driver.
+* This is done by adding certain Spring Beans to a custom configuration class.
 * Complete the following tutorial for more information.
 * [Spring Boot Exit Codes](https://www.baeldung.com/spring-boot-exit-codes)
-* *Hint:* The Spring Beans in the example code can either be implemented in the driver class OR inside a configuration class you create.
+* *Hint:* The Spring Beans in the example code need to be implemented inside a configuration class you create.
+
+###### Bonus Activity 3 (medium)
+* Once you have the exit codes working, change the System.out.println from the example code to use an SLF4J logger instead.
+* Have the output print at the warning level.
 
 #### Notes
 * Dependencies have already been added for you in the pom.xml file for this phase.  You shouldn't have to modify or add anything to your build file (pom.xml), but feel free to as needed.
