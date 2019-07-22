@@ -18,6 +18,9 @@ public class Owner implements Modifiable {
     // associations
     private List<Pet> pets;
 
+    public Owner() {
+
+    }
 
     public Owner(int id) {
         this.id = id;

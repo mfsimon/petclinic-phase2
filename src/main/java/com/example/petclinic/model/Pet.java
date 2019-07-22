@@ -15,6 +15,10 @@ public class Pet implements Modifiable {
     private Owner owner;
     private List<Visit> visits;
 
+    public Pet() {
+
+    }
+
     public Pet(int id) {
         this.id = id;
     }

@@ -14,7 +14,7 @@ public class Vet implements Modifiable {
     // associations
     private List<Visit> visits;
 
-    protected Vet() {
+    public Vet() {
 
     }
 

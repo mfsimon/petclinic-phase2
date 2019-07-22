@@ -14,7 +14,7 @@ public class Visit implements Modifiable {
     private Pet pet;
     private List<Vet> vets;
 
-    protected Visit() {
+    public Visit() {
 
     }
 
