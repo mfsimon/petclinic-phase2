@@ -21,7 +21,7 @@ public class VisitService implements BasicService<Visit> {
     }
 
     @Override
-    public Visit get(int id) {
+    public Visit get(Long id) {
 
         return this.visitRepository.read(new Visit(id));
     }

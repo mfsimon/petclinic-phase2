@@ -2,9 +2,11 @@ package com.example.petclinic.controller;
 
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.service.OwnerService;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
+@Controller
 public class OwnerController implements BasicController<Owner> {
 
     private OwnerService ownerService;
@@ -21,7 +23,7 @@ public class OwnerController implements BasicController<Owner> {
     }
 
     @Override
-    public Owner get(int id) {
+    public Owner get(Long id) {
 
         return this.ownerService.get(id);
     }

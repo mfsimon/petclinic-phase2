@@ -7,36 +7,33 @@ import java.util.Objects;
 public class Vet implements Modifiable {
 
 
-    private int id;
+    private Long id;
     private String name;
     private List<Speciality> specialities;
 
-    // associations
-    private List<Visit> visits;
-
-    protected Vet() {
+    public Vet() {
 
     }
 
-    public Vet(int id) {
+    public Vet(Long id) {
 
-        this.id = id;
+        this(id, null, null);
     }
 
-    public Vet(int id, String name, List<Speciality> specialities, List<Visit> visits) {
+    public Vet(Long id, String name, List<Speciality> specialities) {
 
         this.id = id;
         this.name = name;
         this.specialities = specialities;
-        this.visits = visits;
+
     }
 
     @Override
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -75,7 +72,6 @@ public class Vet implements Modifiable {
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", specialities=").append(specialities);
-        sb.append(", visits=").append(visits);
         sb.append('}');
         return sb.toString();
     }

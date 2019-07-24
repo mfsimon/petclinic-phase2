@@ -21,7 +21,7 @@ public class VisitController implements BasicController<Visit> {
     }
 
     @Override
-    public Visit get(int id) {
+    public Visit get(Long id) {
 
         return this.visitService.get(id);
     }

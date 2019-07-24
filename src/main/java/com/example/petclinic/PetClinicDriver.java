@@ -49,10 +49,10 @@ public class PetClinicDriver {
         // ***** Owner testing *****
 
         // create our owners
-        Owner owner1 = new Owner(1, "Homer Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
-        Owner owner2 = new Owner(2, "Marge Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
-        Owner owner3 = new Owner(3, "Lisa Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
-        Owner owner4 = new Owner(4, "Bart Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
+        Owner owner1 = new Owner(1L, "Homer Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
+        Owner owner2 = new Owner(2L, "Marge Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
+        Owner owner3 = new Owner(3L, "Lisa Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
+        Owner owner4 = new Owner(4L, "Bart Simpson", "742 Evergreen Terrace", "Springfield", "9395550113");
 
         // save owners to database
         ownerController.add(owner1);
@@ -65,16 +65,13 @@ public class PetClinicDriver {
         display(owners);
 
         // create some pets and add them to an existing owner
-        Pet pet1 = new Pet(1, "Godzilla", new Date(), PetType.LIZARD);
-        Pet pet2 = new Pet(2, "Santa's Little Helper", new Date(), PetType.DOG);
+        Pet pet1 = new Pet(1L, "Godzilla", new Date(), PetType.LIZARD);
+        Pet pet2 = new Pet(2L, "Santa's Little Helper", new Date(), PetType.DOG);
         owner4.addPet(pet1);
         owner4.addPet(pet2);
 
-        // display the owner info again
-        display(owners);
-
-        Pet pet3 = new Pet(1, "Strangles", new Date(), PetType.SNAKE);
-        Pet pet4 = new Pet(1, "Stompy", new Date(), PetType.ELEPHANT);
+        Pet pet3 = new Pet(1L, "Strangles", new Date(), PetType.SNAKE);
+        Pet pet4 = new Pet(2L, "Stompy", new Date(), PetType.ELEPHANT);
 
         petController.add(pet1);
         petController.add(pet2);
@@ -85,8 +82,8 @@ public class PetClinicDriver {
 
         // ***** Visit *****
 
-        Visit visit1 = new Visit(1, new Date(), "description", pet1);
-        Visit visit2 = new Visit(2, new Date(), "description", pet2);
+        Visit visit1 = new Visit(1L, new Date(), "description");
+        Visit visit2 = new Visit(2L, new Date(), "description");
 
         visitController.add(visit1);
         visitController.add(visit2);
@@ -99,12 +96,7 @@ public class PetClinicDriver {
             add(Speciality.RADIOLOGY);
         }};
 
-        List<Visit> visits = new ArrayList<Visit>() {{
-            add(visit1);
-            add(visit2);
-        }};
-
-        Vet vet1 = new Vet(1, "Veterinarian", specialities , visits);
+        Vet vet1 = new Vet(1L, "Veterinarian", specialities);
 
         vetController.add(vet1);
 
