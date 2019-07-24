@@ -21,7 +21,7 @@ public class VetController implements BasicController<Vet> {
     }
 
     @Override
-    public Vet get(int id) {
+    public Vet get(Long id) {
 
         return this.vetService.get(id);
     }

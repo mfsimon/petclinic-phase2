@@ -1,9 +1,11 @@
 package com.example.petclinic.repository;
 
 import com.example.petclinic.model.Owner;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class OwnerRepository extends BasicRepository implements CrudRepository<Owner> {
 
     @Override

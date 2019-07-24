@@ -1,40 +1,37 @@
 package com.example.petclinic.model;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 public class Visit implements Modifiable {
 
-    private int id;
+    private Long id;
     private Date dateOfVisit;
     private String description;
-
-    // associations
-    private Pet pet;
-    private List<Vet> vets;
 
     public Visit() {
 
     }
 
-    public Visit(int id) {
-        this.id = id;
+    public Visit(Long id) {
+
+        this(id, null, null);
     }
 
-    public Visit(int id, Date dateOfVisit, String description, Pet pet) {
+    public Visit(Long id, Date dateOfVisit, String description) {
+
         this.id = id;
         this.dateOfVisit = dateOfVisit;
         this.description = description;
-        this.pet = pet;
+
     }
 
     @Override
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,26 +49,6 @@ public class Visit implements Modifiable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Vet getVet(Vet vet) {
-        return this.vets.get(vets.indexOf(vet));
-    }
-
-    public void addVet(Vet vet) {
-        this.vets.add(vet);
-    }
-
-    public List<Vet> getAllVets() {
-        return this.vets;
     }
 
     @Override
@@ -93,8 +70,6 @@ public class Visit implements Modifiable {
         sb.append("id=").append(id);
         sb.append(", dateOfVisit=").append(dateOfVisit);
         sb.append(", description='").append(description).append('\'');
-        sb.append(", pet=").append(pet);
-        sb.append(", vets=").append(vets);
         sb.append('}');
         return sb.toString();
     }

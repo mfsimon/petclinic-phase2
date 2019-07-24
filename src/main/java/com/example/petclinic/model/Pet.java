@@ -1,29 +1,24 @@
 package com.example.petclinic.model;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 public class Pet implements Modifiable {
 
-    private int id;
+    private Long id;
     private String name;
     private Date birthDate;
     private PetType petType;
-
-    // associations
-    private Owner owner;
-    private List<Visit> visits;
 
     public Pet() {
 
     }
 
-    public Pet(int id) {
-        this.id = id;
+    public Pet(Long id) {
+        this(id, null, null, null);
     }
 
-    public Pet(int id, String name, Date birthDate, PetType petType) {
+    public Pet(Long id, String name, Date birthDate, PetType petType) {
 
         this.id = id;
         this.name = name;
@@ -32,11 +27,11 @@ public class Pet implements Modifiable {
     }
 
     @Override
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,26 +59,6 @@ public class Pet implements Modifiable {
         this.petType = petType;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public Visit getVisit(Visit visit) {
-        return visits.get(visits.indexOf(visit));
-    }
-
-    public void addVisit(Visit visit) {
-        visits.add(visit);
-    }
-
-    public List<Visit> getAllVisits() {
-        return this.visits;
-    }
-
     // only include id field when generating equals and hashcode
     @Override
     public boolean equals(Object o) {
@@ -105,8 +80,6 @@ public class Pet implements Modifiable {
         sb.append(", name='").append(name).append('\'');
         sb.append(", birthDate=").append(birthDate);
         sb.append(", petType=").append(petType);
-        sb.append(", owner=").append(owner);
-        sb.append(", visits=").append(visits);
         sb.append('}');
         return sb.toString();
     }

@@ -26,3 +26,4 @@ The following guides illustrate how to use some features and patterns applied in
 * [Lambdas and Closures](https://stackoverflow.com/questions/220658/what-is-the-difference-between-a-closure-and-a-lambda)
 * [Spring Boot Demos (Baeldung)](https://baeldung.com/spring-boot)
 * [Controller, Service, Repository Pattern](https://medium.com/@erwinalberto/part-3-spring-boot-components-controller-service-persistence-dao-7e8c8f1c844b)
+* [Crows Foot Notation and ERDs](http://www2.cs.uregina.ca/~bernatja/crowsfoot.html)
