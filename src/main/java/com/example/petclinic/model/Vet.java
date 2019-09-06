@@ -1,6 +1,7 @@
 package com.example.petclinic.model;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,6 +11,9 @@ public class Vet implements Modifiable {
     private Long id;
     private String name;
     private List<Speciality> specialities;
+
+    // associations
+    private List<Visit> visits;
 
     public Vet() {
 
@@ -25,7 +29,7 @@ public class Vet implements Modifiable {
         this.id = id;
         this.name = name;
         this.specialities = specialities;
-
+        this.visits = new ArrayList<>();
     }
 
     @Override
@@ -53,6 +57,10 @@ public class Vet implements Modifiable {
         this.specialities = specialities;
     }
 
+    public List<Visit> getVisits() {
+        return this.visits;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,4 +83,28 @@ public class Vet implements Modifiable {
         sb.append('}');
         return sb.toString();
     }
+
+    public void addVisit(Visit visit) {
+        addVisit(visit, true);
+    }
+
+    public void addVisit(Visit visit, boolean updateRelationship) {
+
+        visits.add(visit);
+        if(updateRelationship) {
+            visit.addVet(this, false);
+        }
+    }
+
+    public void removeVisit(Visit visit) {
+        removeVisit(visit, true);
+    }
+
+    public void removeVisit(Visit visit, boolean updateRelationship) {
+        visits.remove(visit);
+        if (updateRelationship) {
+            visit.removeVet(this, false);
+        }
+    }
+
 }

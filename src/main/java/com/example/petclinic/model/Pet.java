@@ -1,6 +1,8 @@
 package com.example.petclinic.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Pet implements Modifiable {
@@ -9,6 +11,10 @@ public class Pet implements Modifiable {
     private String name;
     private Date birthDate;
     private PetType petType;
+
+    // associations
+    private List<Visit> visits;
+    private Owner owner;
 
     public Pet() {
 
@@ -24,6 +30,8 @@ public class Pet implements Modifiable {
         this.name = name;
         this.birthDate = birthDate;
         this.petType = petType;
+        this.visits = new ArrayList<>();
+//        this.owner = owner;
     }
 
     @Override
@@ -59,6 +67,14 @@ public class Pet implements Modifiable {
         this.petType = petType;
     }
 
+    public Owner getOwner() {
+        return this.owner;
+    }
+
+    public List<Visit> getVisits() {
+        return this.visits;
+    }
+
     // only include id field when generating equals and hashcode
     @Override
     public boolean equals(Object o) {
@@ -82,5 +98,57 @@ public class Pet implements Modifiable {
         sb.append(", petType=").append(petType);
         sb.append('}');
         return sb.toString();
+    }
+
+    // Update the relationship between Owner and Pet when adding a Owner
+    public void addOwner(Owner owner) {
+
+        addOwner(owner, true);
+    }
+
+    public void addOwner(Owner owner, boolean updateRelationship) {
+        this.owner = owner;
+        if(updateRelationship) {
+            owner.addPet(this, false);
+        }
+    }
+
+    // Update the relationship between Owner and Pet when removing a Owner
+    public void removeOwner(Owner owner) {
+
+        removeOwner(owner, true);
+    }
+
+    public void removeOwner(Owner owner, boolean updateRelationship) {
+        this.owner = null;
+        if (updateRelationship) {
+            owner.removePet(this, false);
+        }
+    }
+
+    // Update the relationship between Visit and Pet when adding a Visit
+    public void addVisit(Visit visit) {
+
+        addVisit(visit, true);
+    }
+
+    public void addVisit(Visit visit, boolean updateRelationship) {
+        visits.add(visit);
+        if(updateRelationship) {
+            visit.addPet(this, false);
+        }
+    }
+
+    // Update the relationship between Pet and Owner when removing a Pet
+    public void removeVisit(Visit visit) {
+
+        removeVisit(visit, true);
+    }
+
+    public void removeVisit(Visit visit, boolean updateRelationship) {
+        visits.remove(visit);
+        if (updateRelationship) {
+            owner.removePet(this, false);
+        }
     }
 }
